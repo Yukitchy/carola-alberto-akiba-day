@@ -36,14 +36,15 @@ HERO_CSS = """
 .hero{background:var(--red);color:#fff;display:flex;flex-direction:column}
 .hero .ht{display:flex;justify-content:space-between;gap:12px;padding:calc(16px + env(safe-area-inset-top,0px)) 16px 0;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
 .hero h1{font-size:min(21vw,200px);line-height:.84;font-weight:900;letter-spacing:-.05em;text-transform:uppercase;margin:0;padding:8px 10px 14px 12px}
-.hero .mos{display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:0 4px}
-.hero .mos figure{margin:0;position:relative;overflow:hidden;aspect-ratio:1/1}
+.hero{overflow:hidden}
+.hero .mos{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:4px;padding:0 4px;box-sizing:border-box;width:100%;min-width:0}
+.hero .mos figure{margin:0;position:relative;overflow:hidden;aspect-ratio:1/1;min-width:0;min-height:0;background:#c8321f}
 .hero .mos figure.w{grid-column:1/3;aspect-ratio:16/10}
-.hero .mos img{width:100%;height:100%;object-fit:cover;display:block}
+.hero .mos img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;display:block}
 .hero .mos span{position:absolute;left:8px;bottom:8px;background:#fff;color:#111;font-size:12px;font-weight:900;padding:3px 8px}
 .hero .hs{padding:14px 16px 20px;padding-left:max(16px,env(safe-area-inset-left,0px));font-size:16px;font-weight:700;line-height:1.5}
 .intro h2.t{font-size:30px;line-height:1.3;font-weight:900;margin-top:6px}
-@media(min-width:900px){.hero{display:grid;grid-template-columns:5fr 7fr;grid-template-rows:auto 1fr auto;min-height:80svh}.hero .ht{grid-column:1}.hero h1{grid-column:1;font-size:min(8.8vw,210px)}.hero .hs{grid-column:1;align-self:end}.hero .mos{grid-column:2;grid-row:1/4;padding:4px}}
+@media(min-width:900px){.hero{display:grid;grid-template-columns:5fr 7fr;grid-template-rows:auto 1fr auto;height:100svh;min-height:560px}.hero .ht{grid-column:1}.hero h1{grid-column:1;font-size:min(8.8vw,210px)}.hero .hs{grid-column:1;align-self:end}.hero .mos{grid-column:2;grid-row:1/4;padding:4px;grid-template-rows:minmax(0,1.35fr) minmax(0,1fr) minmax(0,1fr);height:100%}.hero .mos figure,.hero .mos figure.w{aspect-ratio:auto}}
 """
 
 def step(i, h, body, who=''):
