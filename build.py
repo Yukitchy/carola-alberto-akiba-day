@@ -30,7 +30,7 @@ P = [None,
      (35.69922, 139.77095, 'GiGO retro games', 'GiGO', 't', 'D'),
      (35.69809, 139.77232, "Maidreamin Heaven's Gate", 'Maidreamin', 'b', 'E')]
 DIAL = ['●', 'S', 'A', 'B', 'C', 'D', 'E']
-EXTRA = ['Behind the scenes', 'Our talk']
+EXTRA = ['Behind the scenes', 'Tomorrow']
 
 HERO_CSS = """
 .hero{background:var(--red);color:#fff;display:flex;flex-direction:column}
@@ -42,9 +42,10 @@ HERO_CSS = """
 .hero .mos figure.w{grid-column:1/3;aspect-ratio:16/10}
 .hero .mos img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;display:block}
 .hero .mos span{position:absolute;left:8px;bottom:8px;background:#fff;color:#111;font-size:12px;font-weight:900;padding:3px 8px}
+.hero .hl{display:none}
 .hero .hs{padding:14px 16px 20px;padding-left:max(16px,env(safe-area-inset-left,0px));font-size:16px;font-weight:700;line-height:1.5}
 .intro h2.t{font-size:30px;line-height:1.3;font-weight:900;margin-top:6px}
-@media(min-width:900px){.hero{display:grid;grid-template-columns:5fr 7fr;grid-template-rows:auto 1fr auto;height:100svh;min-height:560px}.hero .ht{grid-column:1}.hero h1{grid-column:1;font-size:min(8.8vw,210px)}.hero .hs{grid-column:1;align-self:end}.hero .mos{grid-column:2;grid-row:1/4;padding:4px;grid-template-rows:minmax(0,1.35fr) minmax(0,1fr) minmax(0,1fr);height:100%}.hero .mos figure,.hero .mos figure.w{aspect-ratio:auto}}
+@media(min-width:900px){.hero{display:grid;grid-template-columns:5fr 7fr;grid-template-rows:auto auto 1fr auto;height:100svh;min-height:560px}.hero .hl{display:flex;flex-direction:column;justify-content:center;gap:clamp(8px,1.6vh,16px);grid-column:1;padding:0 16px;padding-left:max(16px,env(safe-area-inset-left,0px));min-height:0}.hl .meet{font-size:clamp(14px,1.5vw,19px);font-weight:900;line-height:1.35;border-top:2px solid #fff;padding-top:clamp(8px,1.4vh,14px)}.hl .meet small{display:block;font-size:.72em;font-weight:700;opacity:.9;margin-top:2px}.hl ul{list-style:none;margin:0;padding:0;display:grid;gap:clamp(4px,.9vh,9px)}.hl li{display:flex;gap:10px;align-items:baseline;font-size:clamp(13px,1.3vw,17px);font-weight:700;line-height:1.3}.hl li i{font-style:normal;font-weight:900;background:#fff;color:var(--red);min-width:1.5em;text-align:center;padding:1px 4px}.hl li em{font-style:normal;font-weight:500;color:#fff;opacity:.85;margin-left:auto;padding-left:8px;white-space:nowrap}.hero .ht{grid-column:1}.hero h1{grid-column:1;font-size:min(8.8vw,210px)}.hero .hs{grid-column:1;align-self:end}.hero .mos{grid-column:2;grid-row:1/5;padding:4px;grid-template-rows:minmax(0,1.35fr) minmax(0,1fr) minmax(0,1fr);height:100%}.hero .mos figure,.hero .mos figure.w{aspect-ratio:auto}}
 """
 
 def step(i, h, body, who=''):
@@ -107,6 +108,7 @@ head = ('<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="
 def tile(k, cap, alt, wide=False):
     return f'<figure{" class=w" if wide else ""}><img src="{IMG[k]}" alt="{alt}"><span>{cap}</span></figure>'
 hero = ('<header class="hero"><div class="ht"><span>Saturday, October 31</span><span>15:00 to 19:00</span></div><h1>AKI<br>HABARA</h1>'
+        '<div class="hl"><p class="meet">15:00, inside Vie de France<small>BiTO Akiba Plaza, about 1 minute from Akihabara station</small></p><ul><li><i>A</i>Kanda Myojin<em>Carola</em></li><li><i>B</i>G-Store Akiba<em>Alberto</em></li><li><i>C</i>Trader<em>Alberto</em></li><li><i>D</i>GiGO retro games<em>both</em></li><li><i>E</i>Maidreamin<em>both</em></li></ul></div>'
         '<div class="mos">' + tile('shrine', 'A  Kanda Myojin', 'The main hall of Kanda Myojin shrine', True)
         + tile('ema', 'A  Anime-style ema', 'Wooden prayer plaques, some drawn as anime characters')
         + tile('arcade', 'D  Retro games', 'Retro arcade machines at GiGO Akihabara')
