@@ -33,17 +33,17 @@ DIAL = ['●', 'S', 'A', 'B', 'C', 'D', 'E']
 EXTRA = ['Behind the scenes', 'Our talk']
 
 HERO_CSS = """
-.hero{position:relative;overflow:hidden;background:#0b0b10;color:#fff;aspect-ratio:4/5;max-height:88svh;display:flex;flex-direction:column;justify-content:flex-end}
-.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
-.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,.15) 55%,rgba(0,0,0,.82) 100%)}
-.hero .ht{position:relative;z-index:1;padding:0 16px 22px;padding-left:max(16px,env(safe-area-inset-left,0px))}
-.hero .hk{font-size:13px;font-weight:700;letter-spacing:.04em;margin-bottom:6px}
-.hero h1{font-size:min(13.6vw,210px);line-height:.88;font-weight:900;letter-spacing:-.04em;text-transform:uppercase;margin:0;white-space:nowrap}
-.hero .hs{margin-top:12px;font-size:15px;font-weight:700;line-height:1.5;max-width:30em}
-.hero .hs em{font-style:normal;color:#ff6a57}
-.hero .hc{position:absolute;z-index:1;top:max(10px,env(safe-area-inset-top,0px));right:12px;font-size:11px;opacity:.8}
+.hero{background:var(--red);color:#fff;display:flex;flex-direction:column}
+.hero .ht{display:flex;justify-content:space-between;gap:12px;padding:calc(16px + env(safe-area-inset-top,0px)) 16px 0;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+.hero h1{font-size:min(21vw,200px);line-height:.84;font-weight:900;letter-spacing:-.05em;text-transform:uppercase;margin:0;padding:8px 10px 14px 12px}
+.hero .mos{display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:0 4px}
+.hero .mos figure{margin:0;position:relative;overflow:hidden;aspect-ratio:1/1}
+.hero .mos figure.w{grid-column:1/3;aspect-ratio:16/10}
+.hero .mos img{width:100%;height:100%;object-fit:cover;display:block}
+.hero .mos span{position:absolute;left:8px;bottom:8px;background:#fff;color:#111;font-size:12px;font-weight:900;padding:3px 8px}
+.hero .hs{padding:14px 16px 20px;padding-left:max(16px,env(safe-area-inset-left,0px));font-size:16px;font-weight:700;line-height:1.5}
 .intro h2.t{font-size:30px;line-height:1.3;font-weight:900;margin-top:6px}
-@media(min-width:900px){.hero{aspect-ratio:21/9;max-height:70svh}.hero h1{font-size:min(12.5vw,230px)}}
+@media(min-width:900px){.hero{display:grid;grid-template-columns:5fr 7fr;grid-template-rows:auto 1fr auto;min-height:80svh}.hero .ht{grid-column:1}.hero h1{grid-column:1;font-size:min(8.8vw,210px)}.hero .hs{grid-column:1;align-self:end}.hero .mos{grid-column:2;grid-row:1/4;padding:4px}}
 """
 
 def step(i, h, body, who=''):
@@ -108,9 +108,15 @@ head = ('<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="
         f'<meta property="og:title" content="{TITLE}"><meta property="og:description" content="{DESC}"><meta property="og:type" content="website"><meta property="og:url" content="https://yukitchy.github.io/carola-alberto-akiba-day/"><meta property="og:image" content="{IMG["night"]}"><meta name="twitter:card" content="summary_large_image">'
         '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;900&display=swap">'
         '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script><style>' + open('style.css').read() + HERO_CSS + '</style></head><body>')
-hero = ('<header class="hero"><img src="' + IMG['night'].replace('960px', '1280px') + '" alt="Akihabara Electric Town lit up at dusk, with anime billboards" fetchpriority="high"><span class="hc">Photo: Wikimedia Commons, CC BY 4.0</span>'
-        '<div class="ht"><p class="hk">Saturday, October 31 · for Carola and Alberto</p><h1>Akihabara</h1>'
-        '<p class="hs">A shrine, anime shops, retro games and a maid café. We meet at <em>15:00</em> inside Vie de France.</p></div></header>')
+def tile(k, cap, alt, wide=False):
+    return f'<figure{" class=w" if wide else ""}><img src="{IMG[k]}" alt="{alt}"><span>{cap}</span></figure>'
+hero = ('<header class="hero"><div class="ht"><span>Saturday, October 31</span><span>15:00 to 19:00</span></div><h1>AKI<br>HABARA</h1>'
+        '<div class="mos">' + tile('shrine', 'A  Kanda Myojin', 'The main hall of Kanda Myojin shrine', True)
+        + tile('ema', 'A  Anime-style ema', 'Wooden prayer plaques, some drawn as anime characters')
+        + tile('arcade', 'D  Retro games', 'Retro arcade machines at GiGO Akihabara')
+        + tile('street', 'B, C  Anime shops', 'A main street of Akihabara by day')
+        + tile('night', 'E  Maid café', 'Akihabara at dusk, with anime billboards') + '</div>'
+        '<p class="hs">Carola and Alberto, we meet at 15:00 inside Vie de France.</p></header>')
 intro = ('<div class="wrap"><div class="mapbox"><div id="map" aria-label="Map of the places"></div><p class="where"><small>Saturday, October 31</small><b>The whole afternoon</b></p>'
          '<nav class="dial" aria-label="Switch place"><button type="button" class="ar" data-d="-1" aria-label="Previous place">&lsaquo;</button><div class="nums-r">' + dn + '</div><button type="button" class="ar" data-d="1" aria-label="Next place">&rsaquo;</button></nav></div>'
          f'<main class="story"><header class="intro"><p class="date">Saturday, October 31 · 15:00 to 19:00</p><h2 class="t">{TITLE}</h2><p class="who">Carola and Alberto, with Yuuki. A shrine, anime shops, retro games and a maid café, to choose from as we go.</p>'
