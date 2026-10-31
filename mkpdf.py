@@ -13,13 +13,12 @@ CACHE = os.path.join(os.path.dirname(os.path.abspath(__file__)), '.mapcache'); o
 # ---- data -------------------------------------------------------------------------------------
 # letter, short label, long name, who, lat, lon (None = no coordinates found, listed but not pinned), note
 PLACES = [('S', 'Vie de France', 'Vie de France, inside the café', 'We meet here at 15:00', 35.69881, 139.77237, 'BiTO Akiba Plaza, 1 min from the station'),
-          ('A', 'Kanda Myojin', 'Kanda Myojin Shrine', 'For Carola', 35.70194, 139.76774, 'Akihabara\'s own shrine, anime-style wish plaques'),
-          ('B', 'G-Store', 'G-Store Akiba', 'For Alberto', 35.69830, 139.77085, 'Anime clothing, Jump titles, Onoden building 4F'),
-          ('C', 'Trader', 'Trader main store', 'For Alberto', None, None, 'Prize figures, One Piece and Dragon Ball'),
-          ('D', 'GiGO', 'GiGO retro games, 6F', 'For both', 35.69922, 139.77095, 'Street Fighter II, Pac-Man, pinball'),
-          ('E', 'Maidreamin', "Maidreamin Heaven's Gate", 'For both', 35.69809, 139.77232, 'Open 10:30-23:00, one minute from the station')]
+          ('A', 'G-Store', 'G-Store Akiba', 'For Alberto', 35.69830, 139.77085, 'Anime clothing, Jump titles, Onoden building 4F'),
+          ('B', 'Trader', 'Trader main store', 'For Alberto', None, None, 'Prize figures, One Piece and Dragon Ball'),
+          ('C', 'GiGO', 'GiGO retro games, 6F', 'For both', 35.69922, 139.77095, 'Street Fighter II, Pac-Man, pinball'),
+          ('D', 'Maidreamin', "Maidreamin Heaven's Gate", 'For both', 35.69809, 139.77232, 'Open 10:30-23:00, one minute from the station')]
 TH = 'https://upload.wikimedia.org/wikipedia/commons/thumb/'
-PHOTOS = [TH + '1/19/Kanda-my%C5%8Djin_haiden.jpg/960px-Kanda-my%C5%8Djin_haiden.jpg', TH + 'b/b3/Ema_at_Kanda-Myojin_20141228.jpg/960px-Ema_at_Kanda-Myojin_20141228.jpg',
+PHOTOS = ['https://upload.wikimedia.org/wikipedia/commons/5/59/Post_Earthquake_Tokyo_-_Animate_shop.jpg', TH + 'b/be/Akihabara_20211126_01.jpg/960px-Akihabara_20211126_01.jpg',
           TH + '9/94/GiGO_Retro_Games_Akihabara_15-09-2024_%281%29.jpg/960px-GiGO_Retro_Games_Akihabara_15-09-2024_%281%29.jpg', TH + '0/0c/Akihabara_Night.jpg/960px-Akihabara_Night.jpg']
 STN = {'Akihabara Stn': (35.69834, 139.77317)}
 
@@ -146,7 +145,7 @@ li span{{flex:1;min-width:0}}li span b{{display:block;font-weight:800}}li span e
 li i{{flex:none;width:19px;height:19px;border-radius:50%;background:#fff;color:#e60012;border:2px solid #e60012;font:800 11px/15px Archivo;text-align:center;font-style:normal}}li i.st{{background:#111;color:#fff;border-color:#111}}
 .note{{margin:2px 0 0;padding:5px 8px;background:#e4e0d2;font-size:10px;font-weight:600}}
 .foot{{display:flex;gap:8px;align-items:center;margin-top:auto;font-size:9.5px;color:#555;border-top:1px solid #111;padding-top:4px}}.foot img{{width:17mm;height:17mm;flex:none}}.foot p{{margin:0 0 2px}}</style>
-<article><header><h1>Akihabara, Saturday October 31</h1><div class="meta">Guide: Yuuki · meet 15:00, until about 19:00<div class="chips"><span>Shrine</span><span>Anime shops</span><span>Retro games</span><span>Maid café</span></div></div></header>
+<article><header><h1>Akihabara, Saturday October 31</h1><div class="meta">Guide: Yuuki · meet 15:00, until about 19:00<div class="chips"><span>Anime shops</span><span>Retro games</span><span>Maid café</span></div></div></header>
 <div class="ph">{photos}</div><div class="band">{band}</div>
 <div class="low"><img class="map" src="{b64(CACHE + '/map_akiba.png')}" alt="">
 <div class="side"><h2>Places to choose from</h2><ul>{rows}</ul><p class="note">This is not a fixed route. We choose the order as we go.</p>
