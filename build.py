@@ -88,13 +88,8 @@ S.append('<article class="step" data-i="7"><p class="no"><i>AI</i>For the AI stu
                ('15:00', 'Yuuki meets you. From here it is a person, not a screen.'))
          + '<p class="lead">Yuuki runs his work with 13 AI assistants. Each has one job and its own workspace, so they do not step on each other. One model gathers information, a second one checks it, and only then does it go into a plan.</p>'
          '<p class="note" style="font-size:14px">The assistants do the research, the drafts and the checking. A person decides. If you want to ask how any of it works, ask on the way. Alberto, that goes double for you.</p></article>')
-S.append('<article class="step" data-i="8"><p class="no"><i>♪</i>Only if you both agree</p><h2>Today\'s talk, <span class="l2"><em>kept for you</em></span></h2>'
-         '<p class="lead">If you both say yes, Yuuki wears a small voice recorder today. It is for you as much as for him: afterwards you get a short written summary of what we talked about and what you liked, so you can look back on the day.</p>'
-         + pts(('Yuuki asks first', 'Before we start, Yuuki asks you both. If either of you would rather not, the recorder stays off. You can ask to stop it at any time.'),
-               ('An AI listens afterwards', 'It turns the recording into text, then writes a short summary: the places, the shops, the things you said you wanted to try. Alberto, it is the same kind of chain as behind the scenes today: speech to text, then a model that summarises.'),
-               ('A copy comes to you', 'The summary is sent to you. If there is anything you do not want kept, tell Yuuki and he removes it.'))
-         + '<p class="note" style="font-size:14px">Only what you agree to is recorded, and nothing is shared with anyone else.</p>'
-         + links(('Tomorrow, if you still have energy: Ikebukuro Halloween Cosplay Fest, 10:00 to 18:00', 'https://ikebukurocosplay.jp/en/')) + '</article>')
+S.append('<article class="step" data-i="8"><p class="no"><i>♪</i>If you still have energy</p><h2>Tomorrow</h2>'
+         + links(('Ikebukuro Halloween Cosplay Fest, 10:00 to 18:00', 'https://ikebukurocosplay.jp/en/')) + '</article>')
 
 credit_items = ['Kanda-myōjin haiden.jpg, CC BY-SA 4.0', 'Ema at Kanda-Myojin 20141228.jpg, CC BY 2.0', 'Akihabara 20211126 01.jpg, CC0',
                 'GiGO Retro Games Akihabara 15-09-2024 (1).jpg, CC BY 4.0', 'Akihabara Night.jpg, CC BY 4.0']
