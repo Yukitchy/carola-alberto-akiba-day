@@ -14,6 +14,7 @@ def ph(src, alt): return f'<div class="ph"><img src="{src}" alt="{alt}"></div>'
 
 TH = 'https://upload.wikimedia.org/wikipedia/commons/thumb/'
 IMG = dict(
+    maid='maidreamin.jpg',
     shop='https://upload.wikimedia.org/wikipedia/commons/5/59/Post_Earthquake_Tokyo_-_Animate_shop.jpg',
     street=TH + 'b/be/Akihabara_20211126_01.jpg/960px-Akihabara_20211126_01.jpg',
     arcade=TH + '9/94/GiGO_Retro_Games_Akihabara_15-09-2024_%281%29.jpg/960px-GiGO_Retro_Games_Akihabara_15-09-2024_%281%29.jpg',
@@ -72,7 +73,7 @@ S.append(step(3, 'Trader, <em>figures</em>',
 S.append(step(4, 'GiGO, <em>retro games</em>', ph(IMG['arcade'], 'Retro arcade machines at GiGO Akihabara')
               + '<p class="lead">The 6th floor is a retro arcade, with machines you can play together: Street Fighter II, Pac-Man, pinball. There are seats if anyone wants to rest.</p>'
               + links(('GiGO retro games on Google Maps', gm('RETRO:G Retro Games GiGO Akihabara'))), 'For both'))
-S.append(step(5, "Maidreamin, <em>the maid café</em>", ph(IMG['night'], 'Akihabara at dusk, with anime billboards')
+S.append(step(5, "Maidreamin, <em>the maid café</em>", ph(IMG['maid'], 'Maidreamin maid café, official photo')
               + "<p class=\"lead\">The maid café you both asked for. Heaven's Gate is right by the station, and there is a good chance of a live show. You choose what to order there. It is a good last stop, because the station is one minute away.</p>"
               + nums(('Open', '10:30 to 23:00', 'every day'))
               + links(("Maidreamin Heaven's Gate on Google Maps", gm("Maidreamin Heaven's Gate Akihabara"))), 'For both'))
@@ -88,7 +89,7 @@ S.append('<article class="step" data-i="6"><p class="no"><i>AI</i>For the AI stu
 S.append('<article class="step" data-i="7"><p class="no"><i>♪</i>If you still have energy</p><h2>Tomorrow</h2>'
          + links(('Ikebukuro Halloween Cosplay Fest, 10:00 to 18:00', 'https://ikebukurocosplay.jp/en/')) + '</article>')
 
-credit_items = ['Post Earthquake Tokyo - Animate shop.jpg, CC BY-SA 2.0', 'Akihabara 20211126 01.jpg, CC0',
+credit_items = ['Maidreamin official photo, maidreamin.com (rights belong to Maidreamin)', 'Post Earthquake Tokyo - Animate shop.jpg, CC BY-SA 2.0', 'Akihabara 20211126 01.jpg, CC0',
                 'GiGO Retro Games Akihabara 15-09-2024 (1).jpg, CC BY 4.0', 'Akihabara Night.jpg, CC BY 4.0']
 credit = ('<footer class="credit"><p class="note" style="margin:0 0 10px">Times are approximate and can move on the day. Message Yuuki if you want to change anything.</p><details><summary>Photo credits</summary><ul>'
           + ''.join(f'<li>{c}</li>' for c in credit_items)
@@ -104,9 +105,9 @@ def tile(k, cap, alt, wide=False):
     return f'<figure{" class=w" if wide else ""}><img src="{IMG[k]}" alt="{alt}"><span>{cap}</span></figure>'
 hero = ('<header class="hero"><div class="ht"><span>Saturday, October 31</span><span>15:00 to 19:00</span></div><h1>AKI<br>HABARA</h1>'
         '<div class="hl"><div id="hm" aria-label="Map: meeting point and places"></div><p class="cap">15:00 meet inside Vie de France. A to D are the places we can choose from. B, Trader, is on the list below.</p></div>'
-        '<div class="mos">' + tile('night', 'D  Maid café', 'Akihabara at dusk, with anime billboards', True)
+        '<div class="mos">' + tile('maid', 'D  Maid café', 'Maidreamin maid café, official photo', True)
         + tile('arcade', 'C  Retro games', 'Retro arcade machines at GiGO Akihabara')
-        + tile('street', 'Akihabara', 'A main street of Akihabara by day')
+        + tile('night', 'Akihabara', 'Akihabara at dusk, with anime billboards')
         + tile('shop', 'A, B  Anime shops', 'An anime shop front in Akihabara at night', True) + '</div>'
         '<p class="hs">Carola and Alberto, we meet at 15:00 inside Vie de France.</p></header>')
 intro = ('<div class="wrap"><div class="mapbox"><div id="map" aria-label="Map of the places"></div><p class="where"><small>Saturday, October 31</small><b>The whole afternoon</b></p>'
