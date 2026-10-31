@@ -3,7 +3,7 @@
 Same design as the Patrick page (map on top, scroll story). python3 build.py -> index.html
 DEVBAR=True shows the PC/phone toggle on the public URL while Yuuki reviews. Set False before it goes to the guests."""
 import json
-DEVBAR = True
+DEVBAR = False
 
 gm = lambda q: 'https://www.google.com/maps/search/?api=1&query=' + q.replace(' ', '+')
 A = lambda u, t: f'<a href="{u}" target="_blank" rel="noopener">{t}</a>'

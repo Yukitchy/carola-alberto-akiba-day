@@ -233,4 +233,4 @@ function snap(){if(snapping)return;const L0=line(),lim=innerHeight*.3;let best=n
  document.querySelectorAll('.intro,.step').forEach(e=>{const d=e.getBoundingClientRect().top-L0;if(Math.abs(d)<lim&&(!best||Math.abs(d)<Math.abs(best)))best=d});
  if(best!==null&&Math.abs(best)>2&&scrollY+innerHeight<document.documentElement.scrollHeight-2){snapping=true;scrollBy({top:best,behavior:'smooth'});setTimeout(()=>snapping=false,700)}}
 addEventListener('scroll',()=>{clearTimeout(tmr);tmr=setTimeout(snap,140)},{passive:true});
-</script><script>window.DEVBAR_FORCE=innerWidth>=900</script><script src="devbar.js"></script></body></html>
+</script><script src="devbar.js"></script></body></html>
