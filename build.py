@@ -31,19 +31,20 @@ DIAL = ['●', 'S', 'A', 'B', 'C', 'D']
 EXTRA = ['Behind the scenes', 'Tomorrow']
 
 HERO_CSS = """
-.hero{background:var(--red);color:#fff;display:flex;flex-direction:column}
+.hero{background:var(--red);color:#fff;display:flex;flex-direction:column;height:100svh;min-height:520px}
 .hero .ht{display:flex;justify-content:space-between;gap:12px;padding:calc(16px + env(safe-area-inset-top,0px)) 16px 0;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
-.hero h1{font-size:min(21vw,200px);line-height:.84;font-weight:900;letter-spacing:-.05em;text-transform:uppercase;margin:0;padding:8px 10px 14px 12px}
+.hero h1{font-size:min(14.6vw,200px);white-space:nowrap;line-height:.9;font-weight:900;letter-spacing:-.05em;text-transform:uppercase;margin:0;padding:8px 10px 14px 12px}
 .hero{overflow:hidden}
-.hero .mos{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:4px;padding:0 4px;box-sizing:border-box;width:100%;min-width:0}
-.hero .mos figure{margin:0;position:relative;overflow:hidden;aspect-ratio:1/1;min-width:0;min-height:0;background:#c8321f}
-.hero .mos figure.w{grid-column:1/3;aspect-ratio:16/10}
+.hero h1 br{display:none}
+.hero .mos{flex:1 1 0;min-height:0;grid-template-rows:minmax(0,1.2fr) minmax(0,1fr) minmax(0,1.2fr);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:4px;padding:0 4px;box-sizing:border-box;width:100%;min-width:0}
+.hero .mos figure{margin:0;position:relative;overflow:hidden;aspect-ratio:auto;min-width:0;min-height:0;background:#c8321f}
+.hero .mos figure.w{grid-column:1/3}
 .hero .mos img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;display:block}
 .hero .mos span{position:absolute;left:8px;bottom:8px;background:#fff;color:#111;font-size:12px;font-weight:900;padding:3px 8px}
 .hero .hl{display:none}
 .hero .hs{padding:14px 16px 20px;padding-left:max(16px,env(safe-area-inset-left,0px));font-size:16px;font-weight:700;line-height:1.5}
 .intro h2.t{font-size:30px;line-height:1.3;font-weight:900;margin-top:6px}
-@media(min-width:900px){.hero{display:grid;grid-template-columns:5fr 7fr;grid-template-rows:auto auto 1fr auto;height:100svh;min-height:560px}.hero .hl{display:flex;flex-direction:column;gap:10px;grid-column:1;padding:0 16px 4px;padding-left:max(16px,env(safe-area-inset-left,0px));min-height:0}.hl #hm{flex:1;min-height:0;border-radius:4px;overflow:hidden;background:#e9e9e6}.hl .cap{margin:0;font-size:clamp(12px,1.05vw,14px);font-weight:700;line-height:1.4}.hmp b{display:flex;width:34px;height:34px;border-radius:50%;background:var(--red);color:#fff;font-size:15px;font-weight:900;align-items:center;justify-content:center;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.35)}.hmp.meet b{background:#111;font-size:10.5px;letter-spacing:-.02em}.hero .ht{grid-column:1}.hero h1{grid-column:1;font-size:min(8.8vw,210px)}.hero .hs{grid-column:1;align-self:end}.hero .mos{grid-column:2;grid-row:1/5;padding:4px;grid-template-rows:minmax(0,1.2fr) minmax(0,1fr) minmax(0,1.2fr);height:100%}.hero .mos figure,.hero .mos figure.w{aspect-ratio:auto}}
+@media(min-width:900px){.hero h1 br{display:inline}.hero h1{white-space:normal;line-height:.84}.hero{display:grid;grid-template-columns:5fr 7fr;grid-template-rows:auto auto 1fr auto;height:100svh;min-height:560px}.hero .hl{display:flex;flex-direction:column;gap:10px;grid-column:1;padding:0 16px 4px;padding-left:max(16px,env(safe-area-inset-left,0px));min-height:0}.hl #hm{flex:1;min-height:0;border-radius:4px;overflow:hidden;background:#e9e9e6}.hl .cap{margin:0;font-size:clamp(12px,1.05vw,14px);font-weight:700;line-height:1.4}.hmp b{display:flex;width:34px;height:34px;border-radius:50%;background:var(--red);color:#fff;font-size:15px;font-weight:900;align-items:center;justify-content:center;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.35)}.hmp.meet b{background:#111;font-size:10.5px;letter-spacing:-.02em}.hero .ht{grid-column:1}.hero h1{grid-column:1;font-size:min(8.8vw,210px)}.hero .hs{grid-column:1;align-self:end}.hero .mos{grid-column:2;grid-row:1/5;padding:4px;grid-template-rows:minmax(0,1.2fr) minmax(0,1fr) minmax(0,1.2fr);height:100%}.hero .mos figure,.hero .mos figure.w{aspect-ratio:auto}}
 """
 
 def step(i, h, body, who=''):
