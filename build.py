@@ -103,10 +103,10 @@ def tile(k, cap, alt, wide=False):
     return f'<figure{" class=w" if wide else ""}><img src="{IMG[k]}" alt="{alt}"><span>{cap}</span></figure>'
 hero = ('<header class="hero"><div class="ht"><span>Saturday, October 31</span><span>15:00 to 19:00</span></div><h1>AKI<br>HABARA</h1>'
         '<div class="hl"><div id="hm" aria-label="Map: meeting point and places"></div><p class="cap">15:00 meet inside Vie de France. A to D are the places we can choose from. B, Trader, is on the list below.</p></div>'
-        '<div class="mos">' + tile('shop', 'A, B  Anime shops', 'An anime shop front in Akihabara at night', True)
+        '<div class="mos">' + tile('night', 'D  Maid café', 'Akihabara at dusk, with anime billboards', True)
         + tile('arcade', 'C  Retro games', 'Retro arcade machines at GiGO Akihabara')
         + tile('street', 'Akihabara', 'A main street of Akihabara by day')
-        + tile('night', 'D  Maid café', 'Akihabara at dusk, with anime billboards', True) + '</div>'
+        + tile('shop', 'A, B  Anime shops', 'An anime shop front in Akihabara at night', True) + '</div>'
         '<p class="hs">Carola and Alberto, we meet at 15:00 inside Vie de France.</p></header>')
 intro = ('<div class="wrap"><div class="mapbox"><div id="map" aria-label="Map of the places"></div><p class="where"><small>Saturday, October 31</small><b>The whole afternoon</b></p>'
          '<nav class="dial" aria-label="Switch place"><button type="button" class="ar" data-d="-1" aria-label="Previous place">&lsaquo;</button><div class="nums-r">' + dn + '</div><button type="button" class="ar" data-d="1" aria-label="Next place">&rsaquo;</button></nav></div>'
