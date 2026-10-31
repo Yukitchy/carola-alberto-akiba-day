@@ -14,7 +14,7 @@ def ph(src, alt): return f'<div class="ph"><img src="{src}" alt="{alt}"></div>'
 
 TH = 'https://upload.wikimedia.org/wikipedia/commons/thumb/'
 IMG = dict(
-    maid='maidreamin.jpg',
+    maid='maid-inside.jpg',
     shop='https://upload.wikimedia.org/wikipedia/commons/5/59/Post_Earthquake_Tokyo_-_Animate_shop.jpg',
     street=TH + 'b/be/Akihabara_20211126_01.jpg/960px-Akihabara_20211126_01.jpg',
     arcade=TH + '9/94/GiGO_Retro_Games_Akihabara_15-09-2024_%281%29.jpg/960px-GiGO_Retro_Games_Akihabara_15-09-2024_%281%29.jpg',
@@ -41,12 +41,12 @@ HERO_CSS = """
 .hero .mos figure{margin:0;position:relative;overflow:hidden;aspect-ratio:auto;min-width:0;min-height:0;background:#c8321f}
 .hero .mos figure.w{grid-column:1/3}
 .hero .mos img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;display:block}
-.hero .mos img[src='maidreamin.jpg']{object-position:50% 12%}
+
 .hero .mos span{position:absolute;left:8px;bottom:8px;background:#fff;color:#111;font-size:12px;font-weight:900;padding:3px 8px}
 .hero .hl{display:none}
 .hero .hs{padding:14px 16px 20px;padding-left:max(16px,env(safe-area-inset-left,0px));font-size:16px;font-weight:700;line-height:1.5}
 .intro h2.t{font-size:30px;line-height:1.3;font-weight:900;margin-top:6px}
-@media(min-width:900px){.hero h1 br{display:inline}.hero h1{white-space:normal;line-height:.84}.hero{display:grid;grid-template-columns:5fr 7fr;grid-template-rows:auto auto 1fr auto;height:100svh;min-height:560px}.hero .hl{display:flex;flex-direction:column;gap:10px;grid-column:1;padding:0 16px 4px;padding-left:max(16px,env(safe-area-inset-left,0px));min-height:0}.hl #hm{flex:1;min-height:0;border-radius:4px;overflow:hidden;background:#e9e9e6}.hl .cap{margin:0;font-size:clamp(12px,1.05vw,14px);font-weight:700;line-height:1.4}.hmp b{display:flex;width:34px;height:34px;border-radius:50%;background:var(--red);color:#fff;font-size:15px;font-weight:900;align-items:center;justify-content:center;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.35)}.hmp.meet b{background:#111;font-size:10.5px;letter-spacing:-.02em}.hero .ht{grid-column:1}.hero h1{grid-column:1;font-size:min(8.8vw,210px)}.hero .hs{grid-column:1;align-self:end}.hero .mos{grid-column:2;grid-row:1/5;padding:4px;grid-template-rows:minmax(0,1.2fr) minmax(0,1fr) minmax(0,1.2fr);height:100%}.hero .mos figure,.hero .mos figure.w{aspect-ratio:auto}}
+@media(min-width:900px){.hero{display:grid;grid-template-columns:5fr 7fr;grid-template-rows:auto auto 1fr auto;height:100svh;min-height:560px}.hero .hl{display:flex;flex-direction:column;gap:10px;grid-column:1;padding:0 16px 4px;padding-left:max(16px,env(safe-area-inset-left,0px));min-height:0}.hl #hm{flex:1;min-height:0;border-radius:4px;overflow:hidden;background:#e9e9e6}.hl .cap{margin:0;font-size:clamp(12px,1.05vw,14px);font-weight:700;line-height:1.4}.hmp b{display:flex;width:34px;height:34px;border-radius:50%;background:var(--red);color:#fff;font-size:15px;font-weight:900;align-items:center;justify-content:center;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.35)}.hmp.meet b{background:#111;font-size:10.5px;letter-spacing:-.02em}.hero .ht{grid-column:1}.hero h1{grid-column:1;font-size:6.5vw}.hero .hs{grid-column:1;align-self:end}.hero .mos{grid-column:2;grid-row:1/5;padding:4px;grid-template-rows:minmax(0,1.2fr) minmax(0,1fr) minmax(0,1.2fr);height:100%}.hero .mos figure,.hero .mos figure.w{aspect-ratio:auto}}
 """
 
 def step(i, h, body, who=''):
@@ -74,7 +74,7 @@ S.append(step(3, 'Trader, <em>figures</em>',
 S.append(step(4, 'GiGO, <em>retro games</em>', ph(IMG['arcade'], 'Retro arcade machines at GiGO Akihabara')
               + '<p class="lead">The 6th floor is a retro arcade, with machines you can play together: Street Fighter II, Pac-Man, pinball. There are seats if anyone wants to rest.</p>'
               + links(('GiGO retro games on Google Maps', gm('RETRO:G Retro Games GiGO Akihabara'))), 'For both'))
-S.append(step(5, "Maidreamin, <em>the maid café</em>", ph(IMG['maid'], 'Maidreamin maid café, official photo')
+S.append(step(5, "Maidreamin, <em>the maid café</em>", ph(IMG['maid'], 'Inside Maidreamin Heaven’s Gate, official photo')
               + "<p class=\"lead\">The maid café you both asked for. Heaven's Gate is right by the station, and there is a good chance of a live show. You choose what to order there. It is a good last stop, because the station is one minute away.</p>"
               + nums(('Open', '10:30 to 23:00', 'every day'))
               + links(("Maidreamin Heaven's Gate on Google Maps", gm("Maidreamin Heaven's Gate Akihabara"))), 'For both'))
@@ -90,7 +90,7 @@ S.append('<article class="step" data-i="6"><p class="no"><i>AI</i>For the AI stu
 S.append('<article class="step" data-i="7"><p class="no"><i>♪</i>If you still have energy</p><h2>Tomorrow</h2>'
          + links(('Ikebukuro Halloween Cosplay Fest, 10:00 to 18:00', 'https://ikebukurocosplay.jp/en/')) + '</article>')
 
-credit_items = ['Maidreamin official photo, maidreamin.com (rights belong to Maidreamin)', 'Post Earthquake Tokyo - Animate shop.jpg, CC BY-SA 2.0', 'Akihabara 20211126 01.jpg, CC0',
+credit_items = ['Maidreamin Heaven’s Gate interior, official photo, maidreamin.com (rights belong to Maidreamin)', 'Post Earthquake Tokyo - Animate shop.jpg, CC BY-SA 2.0', 'Akihabara 20211126 01.jpg, CC0',
                 'GiGO Retro Games Akihabara 15-09-2024 (1).jpg, CC BY 4.0', 'Akihabara Night.jpg, CC BY 4.0']
 credit = ('<footer class="credit"><p class="note" style="margin:0 0 10px">Times are approximate and can move on the day. Message Yuuki if you want to change anything.</p><details><summary>Photo credits</summary><ul>'
           + ''.join(f'<li>{c}</li>' for c in credit_items)
@@ -106,7 +106,7 @@ def tile(k, cap, alt, wide=False):
     return f'<figure{" class=w" if wide else ""}><img src="{IMG[k]}" alt="{alt}"><span>{cap}</span></figure>'
 hero = ('<header class="hero"><div class="ht"><span>Saturday, October 31</span><span>15:00 to 19:00</span></div><h1>AKI<br>HABARA</h1>'
         '<div class="hl"><div id="hm" aria-label="Map: meeting point and places"></div><p class="cap">15:00 meet inside Vie de France. A to D are the places we can choose from. B, Trader, is on the list below.</p></div>'
-        '<div class="mos">' + tile('maid', 'D  Maid café', 'Maidreamin maid café, official photo', True)
+        '<div class="mos">' + tile('maid', 'D  Maid café', 'Inside Maidreamin Heaven’s Gate, official photo', True)
         + tile('arcade', 'C  Retro games', 'Retro arcade machines at GiGO Akihabara')
         + tile('night', 'Akihabara', 'Akihabara at dusk, with anime billboards')
         + tile('shop', 'A, B  Anime shops', 'An anime shop front in Akihabara at night', True) + '</div>'
