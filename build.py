@@ -41,6 +41,7 @@ HERO_CSS = """
 .hero .mos figure{margin:0;position:relative;overflow:hidden;aspect-ratio:auto;min-width:0;min-height:0;background:#c8321f}
 .hero .mos figure.w{grid-column:1/3}
 .hero .mos img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;display:block}
+.hero .mos img[src='maidreamin.jpg']{object-position:50% 12%}
 .hero .mos span{position:absolute;left:8px;bottom:8px;background:#fff;color:#111;font-size:12px;font-weight:900;padding:3px 8px}
 .hero .hl{display:none}
 .hero .hs{padding:14px 16px 20px;padding-left:max(16px,env(safe-area-inset-left,0px));font-size:16px;font-weight:700;line-height:1.5}

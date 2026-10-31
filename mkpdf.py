@@ -19,7 +19,7 @@ PLACES = [('S', 'Vie de France', 'Vie de France, inside the café', 'We meet her
           ('D', 'Maidreamin', "Maidreamin Heaven's Gate", 'For both', 35.69809, 139.77232, 'Open 10:30-23:00, one minute from the station')]
 TH = 'https://upload.wikimedia.org/wikipedia/commons/thumb/'
 PHOTOS = ['https://upload.wikimedia.org/wikipedia/commons/5/59/Post_Earthquake_Tokyo_-_Animate_shop.jpg', TH + 'b/be/Akihabara_20211126_01.jpg/960px-Akihabara_20211126_01.jpg',
-          TH + '9/94/GiGO_Retro_Games_Akihabara_15-09-2024_%281%29.jpg/960px-GiGO_Retro_Games_Akihabara_15-09-2024_%281%29.jpg', TH + '0/0c/Akihabara_Night.jpg/960px-Akihabara_Night.jpg']
+          TH + '9/94/GiGO_Retro_Games_Akihabara_15-09-2024_%281%29.jpg/960px-GiGO_Retro_Games_Akihabara_15-09-2024_%281%29.jpg', 'https://yukitchy.github.io/carola-alberto-akiba-day/maidreamin.jpg']
 STN = {'Akihabara Stn': (35.69834, 139.77317)}
 
 # ---- map rendering (PIL, OSM tiles, red route + arrows + numbered labelled pins) ----------------
